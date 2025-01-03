@@ -1,7 +1,8 @@
 import users from "@/data/users.json";
 import axios from "axios";
+import { NextRequest } from "next/server";
 
-export async function GET(request: { url: string | URL }) {
+export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const userId = searchParams.get("userId");
 
